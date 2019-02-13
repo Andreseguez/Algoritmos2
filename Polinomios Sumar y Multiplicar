@@ -1,0 +1,128 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+	const int N=20;
+	const int M=25;
+	double A_polinomio[N];
+	double B_polinomio[M];
+	double C_polinomio[N+N];
+	int A_tamano;
+	int B_tamano;
+	int C_tamano;
+	int i,j,k;
+	cout<<"Tamaño del polinomio A"<<endl;
+	cin>>A_tamano;
+	i=0;
+	while(i<A_tamano)
+	{
+		cout<<"A["<<i<<"]:";
+		cin>>A_polinomio[i];
+		i++;
+	}
+	cout<<"Tamaño del polinomio B"<<endl;
+	cin>>B_tamano;
+	i=0;
+	while(i<B_tamano)
+	{
+		cout<<"B["<<i<<"]:";
+		cin>>B_polinomio[i];
+		i++;
+	}
+	int opcion;
+	cout<<"De una opcion"<<endl;
+	cout<<"0: Salir"<<endl;
+	cout<<"1: Sumar"<<endl;
+	cout<<"2: Restar"<<endl;
+	cout<<"3: Multiplicar"<<endl;
+	cout<<"4: Dividir"<<endl;
+	cout<<"5: Derivar"<<endl;
+	cout<<"6: Integrar"<<endl;
+	cout<<"7: Multiplicar por un escalar"<<endl;
+	cin>>opcion;
+	while((opcion>0)&&(opcion<9))
+	{
+		if (opcion==1) {
+			i=0;
+		    j=0;
+			k=0;
+			while((i<A_tamano)&&(j<B_tamano))
+			{
+				C_polinomio[k]=A_polinomio[i]+B_polinomio[j];
+				i++;
+				j++;
+			}
+			while(i<A_tamano)
+			{
+				C_polinomio[k]=A_polinomio[i];
+				i++;
+				k++;
+			}
+			while(i<B_tamano)
+			{
+				C_polinomio[k]=B_polinomio[j];
+				j++;
+				k++;
+			}
+			C_tamano=k;
+
+			i=0;
+			while(i<C_tamano)
+			{
+				cout<<"Polinomio C^["<<i<<"]:"<<C_polinomio[i];
+				i++;
+			}
+		}//Fin del if
+		if (opcion==2) {
+		
+		
+		               }
+		if (opcion==3) {
+			             i=0;
+						 while(i<A_tamano)
+						 {
+							 j=0;
+							 while(j<B_tamano)
+							 {
+								 C_polinomio[i+j]=A_polinomio[i]*B_polinomio[j]+C_polinomio[i+j];
+								 j++;
+
+							 }
+							 i++;
+						 }
+						 C_tamano=i+j-1;
+		
+		               }
+		if (opcion==4) {
+		
+		
+		               }
+		if (opcion==5) {
+		
+		
+		               }
+		if (opcion==6) {
+		
+		
+		               }
+		if (opcion==7) {
+		
+		
+		               }
+	
+	cout<<"De una opcion"<<endl;
+	cout<<"0: Salir"<<endl;
+	cout<<"1: Sumar"<<endl;
+	cout<<"2: Restar"<<endl;
+	cout<<"3: Multiplicar"<<endl;
+	cout<<"4: Dividir"<<endl;
+	cout<<"5: Derivar"<<endl;
+	cout<<"6: Integrar"<<endl;
+	cout<<"7: Multiplicar por un escalar"<<endl;
+	cin>>opcion;
+	
+	}
+	return 0;
+}
