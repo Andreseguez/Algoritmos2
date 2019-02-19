@@ -1,0 +1,117 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+	const int N=20;
+	const int M= 25;
+	double X_polinomio [N];
+	double Y_polinomio [M];
+	double Z_polinomio [N+M];
+	int  X_tamano;
+	int Y_tamano;
+	int Z_tamano;
+	int i,j,k;
+	cout<<"Tamaño polinomio X";
+	cin>>X_tamano;
+	i=0;
+	while( i<X_tamano)
+	{
+		cout<<"X["<<i<<"]:";
+		cin>> X_polinommio [i];
+		i++;
+	}
+	cout<<"Tamaño polinomio Y";
+	cin>>Y_tamano;
+	i=0;
+	while(i<Y_tamano)
+	{
+		cout<<"Y ["<<i<<"]:";
+		i++;
+	}
+	int opcion;
+	cout<<"0: salir "<<endl;
+	cout<<"1:sumar"<<endl;
+
+
+	return 0;
+}
+
+void Lectura(double polinomio[N],int &tamano,string texto)
+{
+	int i;
+	cout<<"Tamano polinomio X:";
+	cin>>tamano;
+	while(i<tamano)
+	{
+		cout<<"Polinomio"<<texto<<"["<<i<<"]:";
+		cin>>polinomio[i];
+		i++;
+	}
+	
+}
+void Mostrar(double polinomio[N],int tamano,string texto)
+{
+	int i;
+	i=0;
+	while(i<tamano)
+	{
+		cout<<"Polinomio"<<texto<<"["<<i<<"]"<<polinomio[i]<<endl;
+		i++;
+	}
+	cout<<endl;
+}
+
+void Sumar ( double X_polinomio [N], int X_tamano,double Y_polinomio[M],int Y_tamano,double Z_polinomio[N+M],int &Z_tamano)
+{
+	int i;
+	int j;
+	int k;
+	i=0;
+	j=0;
+	k=0;
+	while ((i<X_tamano)&&(j<Y_tamano))
+	{ 
+		Z_polinomio [k]= X_polinomio [i]+Y_polinomio [j];
+		i++;
+		j++;
+		k++;
+	}
+	while (i<X_tamano)
+	{
+		Z_polinomio [k]=X_polinomio [i];
+		i++;
+		k++;
+	}
+	while(j<Y_tamano)
+	{
+		Z_polinomio[k]= Y_polinomio [j];
+		j++;
+		k++;
+	}
+	Z_tamano=k;
+}
+void Multiplicar ( double X_polinomio [N], int X_tamano,double Y_polinomio [M],int Y_tamano,double Z_polinomio [N+M],int Z_tamano)
+{
+	int i,j;
+	for ( i=0;i<(X_tamano+Y_tamano);i++)
+		Z_polinomio[i]=0;
+	i=0;
+	while (i<X_tamano)
+	{
+		j=0;
+		while(j<Y_tamano)
+		{
+			Z_polinomio [i+j]=X_polinomio[i]+ Y_polinomio[j]+Z_polinomio [i+j];
+			j++;
+		}
+		i++;
+	}
+	Z_tamano=i+j-1;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	return 0;
+}
