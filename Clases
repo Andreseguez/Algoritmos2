@@ -1,0 +1,71 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include "Sumas.h"
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	const int N=20;
+	const int M=25;
+	double X_polinomio[N];
+	double Y_polinomio[M];
+	double Z_polinomio[N+N];
+	int X_tamano;
+	int Y_tamano;
+	int Z_tamano;
+	Lectura(X_polinomio,X_tamano,"X");
+	Lectura(Y_polinomio,Y_tamano,"Y");
+	Mostrar(X_polinomio,X_tamano,"X");
+	Mostrar(X_polinomio,X_tamano,"X");
+	int i,j,k;
+	int opcion;
+	opcion=menu();
+
+	while((opcion>0)&&(opcion<9))
+	{
+		if (opcion==1) {
+			            Sumar (X_polinomio,X_tamano,Y_polinomio,Y_tamano,Z_polinomio,Z_tamano);
+						Mostrar(Z_polinomio,Z_tamano,"Z");
+		}
+		if (opcion==2) {
+		                Restar (X_polinomio,X_tamano,Y_polinomio,Y_tamano,Z_polinomio,Z_tamano);
+						Mostrar(Z_polinomio,Z_tamano,"Z");
+		
+		               }
+		if (opcion==3) {
+			            Multiplicar (X_polinomio,X_tamano,Y_polinomio,Y_tamano,Z_polinomio,Z_tamano);
+						Mostrar(Z_polinomio,Z_tamano,"Z");
+		
+		               }
+		if (opcion==4) {
+		
+		
+		               }
+		if (opcion==5) {
+		
+		
+		               }
+		if (opcion==6) {
+		
+		
+		               }
+		if (opcion==7) {
+		
+		
+		               }
+	
+	cout<<"De una opcion"<<endl;
+	cout<<"0: Salir"<<endl;
+	cout<<"1: Sumar"<<endl;
+	cout<<"2: Restar"<<endl;
+	cout<<"3: Multiplicar"<<endl;
+	cout<<"4: Dividir"<<endl;
+	cout<<"5: Derivar"<<endl;
+	cout<<"6: Integrar"<<endl;
+	cout<<"7: Multiplicar por un escalar"<<endl;
+	cin>>opcion;
+	
+	}
+	return 0;
+}
