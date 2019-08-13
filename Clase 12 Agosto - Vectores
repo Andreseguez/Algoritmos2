@@ -77,6 +77,17 @@ void frecuencia(int v[], int n)
 	}
 }
 
+bool ordenadoAsc(int v[], int n)
+{ int i=0;
+	while(i < n-1)
+	{
+		if(v[i+1] < v[i])
+			return false;
+		i=i+1;
+	}
+	return true;
+}
+
 void main ()
 {
 	int v[50]; int n;
