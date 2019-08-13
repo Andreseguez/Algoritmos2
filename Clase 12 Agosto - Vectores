@@ -97,5 +97,9 @@ void main ()
 	leerVector(v,n);
 	mostrarVector(v,n);
 	frecuencia(v,n);
+	if(ordenadoAsc(v,n))
+	cout<<"Ordenado..!!";
+	else
+	cout<<"No esta ordenado..!!";
 }
 
