@@ -1,0 +1,67 @@
+
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+void leerVector(int v[],int n)
+{
+	for(int i=0;i<n;i++)
+		cin>>v[i];
+}
+
+void mostrarVector(int v[],int n)
+{
+	for(int i=0;i<n;i++)
+		cout<<v[i]<<" ";
+	cout<<endl;
+}
+
+int sumar(int v[], int n)
+{
+	if(n==0)
+		return 0;
+	else
+		if(n==1)
+			return v[0];
+		else
+		{
+			int s=sumar(v,n-1);
+			return s + v[n-1];
+		}
+}
+//sumar los elementos pares de un vector
+
+int sumarPares(int v[], int n)
+{
+	if(n==0)
+		return 0;
+	else
+		if(n==1)
+		{
+			if(v[0]%2==0)
+				return v[0];
+			else
+				return 0;
+		}
+		else
+		{
+			int s=sumarPares(v,n-1);
+			if (v[n-1]%2==0)
+				return s+v[n-1];
+			else
+				return s;
+		}
+		
+}
+
+void main ()
+{
+	int v[50]; int n;
+	cout<<"Ingresar dimension: ";cin>>n;
+	leerVector(v,n);
+	mostrarVector(v,n);
+	cout<<sumar(v,n)<<endl;
+	cout<<sumarPares(v,n)<<endl;
+}
+
