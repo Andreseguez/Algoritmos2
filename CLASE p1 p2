@@ -1,0 +1,79 @@
+
+#include "stdafx.h"
+#include "iostream"
+#include "math.h"
+
+using namespace std;
+
+class Punto
+{
+private:
+	int x, y;
+public:
+	Punto()
+	{
+		x=0;
+		y=0;
+	}
+	void leer()
+	{
+		cout<<"x=";cin>>x;
+		cout<<"y=";cin>>y; cout<<endl;
+	}
+	void mostrar()
+	{
+		cout<<"x="<<x; cout<<endl;
+		cout<<"y="<<y; cout<<endl;
+	}
+	void cuadrante()
+	{
+		if (x>0 && y>0)
+			cout<<"Primer cuadrante"<<endl;
+		else
+			if (x<0 && y>0)
+				cout<<"Segundo cuadrante"<<endl;
+			else
+				if (x<0 && y<0)
+					cout<<"Tercer cuadrante"<<endl;
+				else
+					if (x>0 && y<0)
+						cout<<"Cuarto cuadrante"<<endl;
+					else 
+						if (x==0 && y==0)
+							cout<<"Origen"<<endl;
+	}
+	//metodos setters (insertores)
+	void setX(int a)
+	{ x=a; }
+	void setY(int b)
+	{ y=b; }
+	//metodos getters (extractores)
+	float getX()
+	{ return x; }
+	float getY()
+	{ return y; }
+
+	float pendiente(Punto p2)
+	{
+		return (p2.getY()- getY())/(p2.getX() - getX());
+	}
+	float distancia(Punto p2)
+	{
+		return sqrt(pow(p2.getX()- getX(),2)+((pow(p2.getY()- getY(),2))));
+	}
+};
+
+void main ()
+{
+	Punto p1,p2;
+	p1.leer();
+	p2.leer();
+	p1.mostrar();
+	p2.mostrar();
+	p1.cuadrante();
+	float m=p1.pendiente(p2);
+	cout<<"La pendiente:"<<m<<endl;
+	float d=p1.distancia(p2);
+	cout<<"La distancia:"<<d<<endl;
+}
+
